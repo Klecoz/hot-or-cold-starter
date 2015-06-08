@@ -27,9 +27,9 @@ $(document).ready(function(){
       $('#feedback').append('Make your guess!');
     });
 
-    var guessString;
-    var guessNum;
-    var guessCount = 0;
+    var guessString; //Keeps the user's guess (A String)
+    var guessNum; //Keeps the user's guess made into a number.
+    var guessCount = 0; //Guessing Counter
 
     //When "Guess Button" is clicked...
     $('#guessButton').click(function() {
@@ -45,7 +45,11 @@ $(document).ready(function(){
       guessCount++;
       console.log(guessCount);
 
+      //Deletes the content of #count and appends it with the new count.
       $('#count').empty().append(guessCount);
+
+      //Adds the user's guess to the list #guessList
+      $('#guessList').append('<li>' + guessNum + '</li>');
 
     });
 
