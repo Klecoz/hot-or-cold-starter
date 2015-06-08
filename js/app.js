@@ -39,8 +39,10 @@ $(document).ready(function(){
       guessString = $('#userGuess').val();
       //Converts the user's guess into a number and sets it to guessNum.
       guessNum = parseInt(guessString);
+
       console.log(guessNum);
 
+      if (guessNum <= 100) {
       //Adds +1 to guessCount;
       guessCount++;
       console.log(guessCount);
@@ -50,6 +52,11 @@ $(document).ready(function(){
 
       //Adds the user's guess to the list #guessList
       $('#guessList').append('<li>' + guessNum + '</li>');
+    }
+
+      else {
+        alert('Please enter a number between 1 and 100');
+      }
 
     });
 
