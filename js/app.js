@@ -42,6 +42,7 @@ $(document).ready(function(){
 
       console.log(guessNum);
 
+      //If the user's number is 100 or less.....
       if (guessNum <= 100) {
       //Adds +1 to guessCount;
       guessCount++;
@@ -53,8 +54,9 @@ $(document).ready(function(){
       //Adds the user's guess to the list #guessList
       $('#guessList').append('<li>' + guessNum + '</li>');
     }
-
+      //If the user's number is not between 1 and 100....
       else {
+        //Alerts the user that their number is not valid.
         alert('Please enter a number between 1 and 100');
       }
 
