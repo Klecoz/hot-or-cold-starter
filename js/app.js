@@ -34,22 +34,28 @@ $(document).ready(function(){
 
     }
 
-
+    //Checks numbers to see if they are hot or cold.
     function numberChecker(number) {
-
+      //if the guess is correct
       if (number == randomNumber) {
           alert('Correct! The answer is ' + guessNum);
           newGame();
 
         }
+        //If the answer is less then 5 away
+        else if (Math.abs(number-randomNumber) <= 5){
+            $('#feedback').empty().append('ON FIRE!');
+        }
+        //If the answer is less then 10 away
         else if (Math.abs(number-randomNumber) <= 10){
             $('#feedback').empty().append('Warmer!');
         }
-
+        //if the answer if less then 30 away
         else if (Math.abs(number-randomNumber) <= 30){
             $('#feedback').empty().append('Warm!');
         }
 
+        //if the answer is less then 50 away
         else if (Math.abs(number-randomNumber) <= 50){
             $('#feedback').empty().append('Cold!');
         }
